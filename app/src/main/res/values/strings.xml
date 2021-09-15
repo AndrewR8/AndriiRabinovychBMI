@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndriiRabinovychBMI</string>
+    <string name="details_btnCalculate">Calculate</string>
+    <string name="name_hint">Name</string>
+    <string name="details_weight_title">Weight</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="name_and_result">Hello Olivia</string>
+</resources>
