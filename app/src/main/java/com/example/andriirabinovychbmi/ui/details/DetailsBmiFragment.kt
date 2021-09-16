@@ -39,8 +39,6 @@ class DetailsBmiFragment : Fragment() {
             wrapSelectorWheel = false
         }
 
-        viewModel.weight.observe(viewLifecycleOwner) {}
-
         binding.npHeight.apply {
             minValue = viewModel.minValue
             maxValue = viewModel.maxValue
@@ -48,15 +46,10 @@ class DetailsBmiFragment : Fragment() {
             wrapSelectorWheel = false
         }
 
-        viewModel.height.observe(viewLifecycleOwner){}
-
         binding.npGender.apply {
             minValue = viewModel.minValue
             maxValue = viewModel.genderList.size
             displayedValues = viewModel.genderList
-        }
-
-        viewModel.gender.observe(viewLifecycleOwner) {
         }
 
         viewModel.calculateBtnEnabled.observe(viewLifecycleOwner, binding.btnCalculate::setEnabled)
@@ -68,9 +61,5 @@ class DetailsBmiFragment : Fragment() {
         }
 
         binding.etName.addTextChangedListener { viewModel.onNameEdited(it.toString()) }
-    }
-
-    private fun setDetails() {
-        viewModel.onWeightSelected(binding.npWeight.value)
     }
 }
