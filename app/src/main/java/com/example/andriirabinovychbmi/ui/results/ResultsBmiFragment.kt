@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.andriirabinovychbmi.R
 import com.example.andriirabinovychbmi.databinding.FragmentResultsBinding
-import com.example.andriirabinovychbmi.ui.details.DetailsBmiFragment
-import com.example.andriirabinovychbmi.ui.details.DetailsBmiViewModel
 
 class ResultsBmiFragment : Fragment(){
 
@@ -31,6 +29,8 @@ class ResultsBmiFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentResultsBinding.bind(view)
+
+        binding.tvNameAndResult.text
 
     }
 }
