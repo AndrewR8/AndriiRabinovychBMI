@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.andriirabinovychbmi.R
 import com.example.andriirabinovychbmi.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(R.layout.fragment_details_bmi) {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
