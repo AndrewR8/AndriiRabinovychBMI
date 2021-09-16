@@ -20,7 +20,12 @@
         android:name="com.example.andriirabinovychbmi.ui.results.ResultsBmiFragment"
         android:label="BMI Details"
         tools:layout="@layout/fragment_results"
-        />
+        >
+        <action
+            android:id="@+id/action_fragmentResultsBmi_pop_including_fragmentDetailsBmi"
+            app:popUpTo="@id/fragmentDetailsBmi"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 
 </navigation>
