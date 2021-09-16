@@ -1,4 +1,7 @@
 package com.example.andriirabinovychbmi.ui.results
 
-class ResultsBmiViewModel {
+import androidx.lifecycle.ViewModel
+
+class ResultsBmiViewModel : ViewModel() {
+
 }
