@@ -29,7 +29,6 @@ class DetailsBmiViewModel : ViewModel() {
     val calculateBtnEnabled: LiveData<Boolean> = _calculateBtnEnabled
 
     fun onNameEdited(name: String) {
-
         this.name = name
     }
 
@@ -46,5 +45,6 @@ class DetailsBmiViewModel : ViewModel() {
     }
 
     fun onCalculateClicked() {
+
     }
 }
