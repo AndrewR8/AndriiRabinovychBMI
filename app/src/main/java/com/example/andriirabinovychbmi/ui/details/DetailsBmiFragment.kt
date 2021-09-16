@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.andriirabinovychbmi.R
 import com.example.andriirabinovychbmi.databinding.FragmentDetailsBmiBinding
@@ -21,6 +22,8 @@ class DetailsBmiFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        viewModel = ViewModelProvider(this).get(DetailsBmiViewModel::class.java)
         return inflater.inflate(R.layout.fragment_details_bmi, container, false)
     }
 
@@ -44,10 +47,16 @@ class DetailsBmiFragment : Fragment() {
             value = viewModel.weight.value ?: minValue
             wrapSelectorWheel = false
         }
-        viewModel.onHeightSelected(binding.npHeight.value)
+
+        viewModel.height.observe(viewLifecycleOwner){}
 
         binding.npGender.apply {
+            minValue = viewModel.minValue
+            maxValue = viewModel.genderList.size
+            displayedValues = viewModel.genderList
+        }
 
+        viewModel.gender.observe(viewLifecycleOwner) {
         }
 
         viewModel.calculateBtnEnabled.observe(viewLifecycleOwner, binding.btnCalculate::setEnabled)
