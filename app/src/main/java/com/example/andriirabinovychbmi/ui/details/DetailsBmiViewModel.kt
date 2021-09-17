@@ -44,7 +44,11 @@ class DetailsBmiViewModel : ViewModel() {
         _gender.value = gender
     }
 
-    fun onCalculateClicked() {
+    fun onCalculateClicked(): Int? {
+        return calculateBmi()
+    }
 
+    private fun calculateBmi(): Int?{
+        return bmi
     }
 }
