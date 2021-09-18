@@ -15,14 +15,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="18.16"
-        android:textSize="40dp"/>
+        android:textSize="40sp"/>
 
     <TextView
         android:id="@+id/tvNameAndResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_and_result"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

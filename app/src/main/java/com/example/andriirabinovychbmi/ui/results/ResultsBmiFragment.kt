@@ -1,19 +1,29 @@
 package com.example.andriirabinovychbmi.ui.results
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.andriirabinovychbmi.R
-import com.example.andriirabinovychbmi.databinding.FragmentResultsBinding
+import com.example.andriirabinovychbmi.databinding.DialogFragmentResultsBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ResultsBmiFragment : Fragment(){
+class ResultsBmiFragment : BottomSheetDialogFragment(){
 
-    private lateinit var binding: FragmentResultsBinding
+    private lateinit var binding: DialogFragmentResultsBinding
 
     private lateinit var viewModel: ResultsBmiViewModel
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
+        super.onCreateDialog(savedInstanceState).apply {
+            setOnShowListener {
+                (this as? BottomSheetDialog)?.behavior?.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,13 +32,13 @@ class ResultsBmiFragment : Fragment(){
     ): View? {
 
         viewModel = ViewModelProvider(this).get(ResultsBmiViewModel::class.java)
-        return inflater.inflate(R.layout.fragment_results, container, false)
+        return inflater.inflate(R.layout.dialog_fragment_results, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = FragmentResultsBinding.bind(view)
+        binding = DialogFragmentResultsBinding.bind(view)
 
         binding.tvNameAndResult.text
 
