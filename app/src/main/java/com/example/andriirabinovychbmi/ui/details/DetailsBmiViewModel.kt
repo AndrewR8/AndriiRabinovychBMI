@@ -3,10 +3,11 @@ package com.example.andriirabinovychbmi.ui.details
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.math.roundToInt
 
 class DetailsBmiViewModel : ViewModel() {
 
-    private var name = ""
+    var name = ""
     val minValue = 1
     val maxValue = 300
     val genderList = arrayOf(
@@ -23,7 +24,8 @@ class DetailsBmiViewModel : ViewModel() {
     private val _gender = MutableLiveData(genderList.first())
     val gender: MutableLiveData<String> = _gender
 
-    val bmi = weight.value?.div(height.value!!.times(2))
+    private val _bmi = MutableLiveData(minValue.toFloat())
+    val bmi: MutableLiveData<Float> = _bmi
 
     private val _calculateBtnEnabled = MutableLiveData(true)
     val calculateBtnEnabled: LiveData<Boolean> = _calculateBtnEnabled
@@ -44,11 +46,8 @@ class DetailsBmiViewModel : ViewModel() {
         _gender.value = gender
     }
 
-    fun onCalculateClicked(): Int? {
-        return calculateBmi()
-    }
-
-    private fun calculateBmi(): Int?{
-        return bmi
+    fun onCalculateClicked(){
+        val bmi = weight.value?.toFloat()?.div(height.value!!.times( height.value!!))!!.times(10000)
+        _bmi.value = bmi
     }
 }
