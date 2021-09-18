@@ -57,7 +57,7 @@ class DetailsBmiFragment : Fragment() {
         binding.btnCalculate.setOnClickListener { v: View ->
             viewModel::onCalculateClicked
             v.findNavController()
-                .navigate(DetailsBmiFragmentDirections.actionFragmentDetailsBmiToFragmentResultsBmi())
+                .navigate(DetailsBmiFragmentDirections.actionFragmentDetailsBmiToDialogResultsFragment())
         }
 
         binding.etName.addTextChangedListener { viewModel.onNameEdited(it.toString()) }

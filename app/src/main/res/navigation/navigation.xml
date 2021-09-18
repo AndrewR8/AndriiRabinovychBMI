@@ -11,7 +11,7 @@
         android:label="Add BMI Details"
         tools:layout="@layout/fragment_details_bmi" >
         <action
-            android:id="@+id/action_fragmentDetailsBmi_to_fragmentResultsBmi"
+            android:id="@+id/action_fragmentDetailsBmi_to_dialogResultsFragment"
             app:destination="@id/fragmentResultsBmi" />
     </fragment>
 
@@ -19,7 +19,7 @@
         android:id="@+id/fragmentResultsBmi"
         android:name="com.example.andriirabinovychbmi.ui.results.ResultsBmiFragment"
         android:label="BMI Details"
-        tools:layout="@layout/fragment_results"
+        tools:layout="@layout/dialog_fragment_results"
         >
         <action
             android:id="@+id/action_fragmentResultsBmi_pop_including_fragmentDetailsBmi"
