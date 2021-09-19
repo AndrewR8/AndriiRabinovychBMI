@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toBottomOf="@id/tvNameAndResult"
+        app:layout_constraintBottom_toBottomOf="@id/tvNameAndCondition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,10 +18,11 @@
         android:textSize="40sp"/>
 
     <TextView
-        android:id="@+id/tvNameAndResult"
+        android:id="@+id/tvNameAndCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_and_result"
+        android:textAlignment="center"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

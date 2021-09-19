@@ -14,7 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ResultsBmiFragment : BottomSheetDialogFragment(){
+class ResultsBmiFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: DialogFragmentResultsBinding
 
@@ -44,12 +44,9 @@ class ResultsBmiFragment : BottomSheetDialogFragment(){
 
         binding = DialogFragmentResultsBinding.bind(view)
 
-        binding.tvNameAndResult.text = detailsViewModel.name
+        binding.tvNameAndCondition.text = "Hello " + detailsViewModel.name + ", you are"  + viewModel.condition(detailsViewModel.bmi.value)
 
-        detailsViewModel.bmi.observe(viewLifecycleOwner){
-            binding.tvBmi.text = detailsViewModel.bmi.value.toString()
-        }
-
+        binding.tvBmi.text = detailsViewModel.bmi.value.toString()
 
     }
 }

@@ -7,7 +7,7 @@ import kotlin.math.roundToInt
 
 class DetailsBmiViewModel : ViewModel() {
 
-    var name = ""
+    var name = "friend"
     val minValue = 1
     val maxValue = 300
     val genderList = arrayOf(

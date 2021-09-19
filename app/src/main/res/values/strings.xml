@@ -6,4 +6,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="name_and_result">Hello Olivia</string>
+    <string name="details_height_title">Height</string>
+    <string name="details_gender_title">Gender</string>
+    <string name="enter_personal_details">Enter Personal Details</string>
 </resources>
