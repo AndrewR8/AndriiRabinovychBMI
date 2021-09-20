@@ -48,6 +48,6 @@ class DetailsBmiViewModel : ViewModel() {
 
     fun onCalculateClicked(){
         val bmi = weight.value?.toFloat()?.div(height.value!!.times( height.value!!))!!.times(10000)
-        _bmi.value = bmi
+        this.bmi.value = bmi
     }
 }
